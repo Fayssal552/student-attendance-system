@@ -1,0 +1,98 @@
+<!-- <!DOCTYPE html>
+<html>
+<head>
+    <title>Attendance</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <h1>Attendance</h1>
+
+    {% for date in attendance_dates %}
+    <h2>{{ date }}</h2>
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Status</th>
+            <th>Time</th>
+            <th>Action</th>
+        </tr>
+        {% for row in attendance_data[date] %}
+        <tr>
+            <td><a href="/attendance/{{ date }}/student/{{ row[0] }}">{{ row[0] }}</a></td>
+            <td>{{ row[1] }}</td>
+            <td>{{ row[2] }}</td>
+            <td><a href="/attendance/{{ date }}/student/{{ row[0] }}">View Details</a></td>
+        </tr>
+        {% endfor %}
+    </table>
+    {% endfor %}
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Update Status</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <h1>Update Student Status</h1>
+    <h2>Name: {{ student_info[0] }}</h2>
+    <h2>Status: {{ student_info[1] }}</h2>
+    <h2>Time: {{ student_info[2] }}</h2>
+
+    <form method="POST" action="/attendance/{{ date }}/student/{{ student_info[0] }}">
+        <select name="status">
+            <option value="Present">Present</option>
+            <option value="Absent">Absent</option>
+        </select>
+        <input type="submit" value="Update Status">
+    </form>
+</body>
+</html>
+
+
+<!--Version2-->
+<!-- <!DOCTYPE html>
+<html>
+<head>
+    <title>Student Information</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <h1>Student Information</h1>
+    <h2>Name: {{ student_info[0] }}</h2>
+    <h2>Status: {{ student_info[1] }}</h2>
+    <h2>Time: {{ student_info[2] }}</h2>
+
+    <form method="POST" action="/attendance/{{ date }}/student/{{ student_info[0] }}">
+        <select name="status">
+            <option value="Present">Present</option>
+            <option value="Absent">Absent</option>
+        </select>
+        <input type="submit" value="Update Status">
+    </form>
+</body>
+</html> -->
+
+<!-- <!DOCTYPE html>
+<html>
+<head>
+    <title>Student Information</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <h1>Student Information</h1>
+    <h2>Name: {{ student_info[0] }}</h2>
+    <h2>Status: {{ student_info[1] }}</h2>
+    <h2>Time: {{ student_info[2] }}</h2>
+
+    <form method="POST" action="/attendance/{{ date }}/student/{{ student_info[0] }}">
+        <select name="status">
+            <option value="Present">Present</option>
+            <option value="Absent">Absent</option>
+        </select>
+        <input type="submit" value="Update Status">
+    </form>
+</body>
+</html> -->

@@ -1,0 +1,89 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Details</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+    <style>
+        .student-info {
+            display: flex;
+            align-items: center;
+        }
+        .student-info img {
+            width: 400px;
+            height: auto;
+            margin-right: 20px;
+        }
+        .student-details {
+            display: flex;
+            flex-direction: column;
+        }
+        .dashboard {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Student Details</h1>
+    <div class="student-info">
+        <img src="{{ url_for('static', filename='img/' + student_info[0] + '.jpg') }}" alt="{{ student_info[0] }}">
+        <div class="student-details">
+            <h2>{{ student_info[0] }}</h2>
+            <p>Program: {{ student_info[3] }}</p>
+            <p>Date of Birth: {{ student_info[4] }}</p>
+        </div>
+    </div>
+
+    <div class="dashboard">
+        <h2>Dashboard</h2>
+        <p>Absent: {{ absent_count }}</p>
+        <p>Present: {{ present_count }}</p>
+    </div>
+</body>
+</html>
+
+
+<!--version3-->
+<!-- <!DOCTYPE html>
+<html>
+<head>
+    <title>Student Details</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+    <style>
+        .student-info {
+            display: flex;
+            align-items: center;
+        }
+        .student-info img {
+            width: 400px;
+            height: auto;
+            margin-right: 20px;
+        }
+        .student-details {
+            display: flex;
+            flex-direction: column;
+        }
+        .dashboard {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Student Details</h1>
+    <div class="student-info">
+        <img src="{{ url_for('static', filename='img/' + student_info[0] + '.jpg') }}" alt="{{ student_info[0] }}">
+        <div class="student-details">
+            <h2>{{ student_info[0] }}</h2>
+            <p>Program: {{ student_info[3] }}</p>
+            <p>Date of Birth: {{ student_info[4] }}</p>
+        </div>
+    </div>
+
+    <div class="dashboard">
+        <h2>Dashboard</h2>
+        <p>Absent: {{ student_info[5] }}</p>
+        <p>Present: {{ student_info[6] }}</p>
+    </div>
+</body>
+</html> -->

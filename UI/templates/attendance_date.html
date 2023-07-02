@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Attendance - {{ date }}</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <h1>{{ date }} Attendance</h1>
+    <table>
+        <tr>
+            <th>Image</th>
+            <th>Name</th>
+            <th>Status</th>
+            <th>Actions</th>
+        </tr>
+        {% for row in attendance_data %}
+        <tr>
+            <td><img src="/static/img/{{ row[0] }}.jpg" width="100" height="100"></td>
+            <td>{{ row[0] }}</td>
+            <td>{{ row[1] }}</td>
+            <td><a href="/attendance/{{ date }}/student/{{ row[0] }}">Edit</a></td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
+
+
+
+<!--Version 2-->
+<!-- <!DOCTYPE html>
+<html>
+<head>
+    <title>Attendance - {{ date }}</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <h1>{{ date }} Attendance</h1>
+    <table>
+        <tr>
+            <th>Image</th>
+            <th>Name</th>
+            <th>Status</th>
+            <th>Time</th>
+            <th>Actions</th>
+        </tr>
+        {% for row in attendance_data %}
+        <tr>
+            <td><img src="file:///C:/Users/dell/Desktop/AI_COMPET/img/{{ row[0] }}.jpg" width="100" height="100"></td>
+            <td>{{ row[0] }}</td>
+            <td>{{ row[1] }}</td>
+            <td>{{ row[2] }}</td>
+            <td><a href="/attendance/{{ date }}/student/{{ row[0] }}">Edit</a></td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html> -->
+
+<!-- <!DOCTYPE html>
+<html>
+<head>
+    <title>Attendance - {{ date }}</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <h1>{{ date }} Attendance</h1>
+    <table>
+        <tr>
+            <th>Image</th>
+            <th>Name</th>
+            <th>Status</th>
+            <th>Actions</th>
+        </tr>
+        {% for row in attendance_data %}
+        <tr>
+            <td><img src="{{ url_for('static', filename='images/' + row[0] + '.jpg') }}" width="100" height="100"></td>
+            <td>{{ row[0] }}</td>
+            <td>{{ row[1] }}</td>
+            <td><a href="/attendance/{{ date }}/student/{{ row[0] }}">Edit</a></td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html> -->
+
+<!-- <!DOCTYPE html>
+<html>
+<head>
+    <title>Attendance - {{ date }}</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <h1>Attendance for {{ date }}</h1>
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Status</th>
+            <th>Time</th>
+            <th>Action</th>
+        </tr>
+        {% for row in attendance_data %}
+        <tr>
+            <td>{{ row[0] }}</td>
+            <td>{{ row[1] }}</td>
+            <td>{{ row[2] }}</td>
+            <td><a href="/attendance/{{ date }}/student/{{ row[0] }}">Edit</a></td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html> -->
